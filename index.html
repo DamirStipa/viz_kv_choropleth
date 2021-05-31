@@ -14,14 +14,19 @@
         <svg id='bachcanvas'>
             
         </svg>
-        <svg id='gdpcanvas'>
-            
-        </svg>
+
         <div id='rightSide'>
+
+            <select id="list" onchange="getSelectValue();">
+                <option value="blank">Select Data</option>
+                <option value="bach">Education Data</option>
+                <option value="gdp">GDP Data</option>
+            </select>
+
             <div id='tooltip'>
 
             </div>
-            <svg id='legend'>
+            <svg id='legend' class="bachleg">
                 <g>
                     <rect x="10" y="0" width="30" height="30" fill="#ffbf00"></rect>
                     <text x="50" y="20" fill="white">Less than 15%</text>
@@ -39,9 +44,9 @@
                     <text x="50" y="140" fill="white">More than 45%</text>
                 </g>
             </svg>
-            <div id='description'>Percentage of adults age 25 and older with a bachelor's degree or higher(2014). Source: <a href='https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx'>USDA Economic Research Service</a></div>
+            <div id='description'class="bachdesc">Percentage of adults age 25 and older with a bachelor's degree or higher(2014). Source: <a href='https://www.ers.usda.gov/data-products/county-level-data-sets/download-data.aspx'>USDA Economic Research Service</a></div>
 
-            <svg id='legend'>
+            <svg id='legend' class="gdpleg">
                 <g>
                     <rect x="10" y="0" width="30" height="30" fill="#779ed1"></rect>
                     <text x="50" y="20" fill="white">Less than 500 000</text>
@@ -59,7 +64,7 @@
                     <text x="50" y="140" fill="white">More than 7000000</text>
                 </g>
             </svg>
-            <div id='description'>GPD per county in $USD. Source: <a href='https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas'>Bureau of Economic Analysis</a></div>
+            <div id='description' class="gdpdesc">GPD per county in $USD. Source: <a href='https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas'>Bureau of Economic Analysis</a></div>
 
         </div>
         

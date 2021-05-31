@@ -8,12 +8,52 @@ let educationData;
 let gpaData;
 
 let canvas = d3.select('#bachcanvas');
-
-let gdpcanvas = d3.select('#gdpcanvas');
 let tooltip = d3.select('#tooltip');
+
+function getSelectValue(){
+    var selectedValue = document.getElementById("list").value;
+
+    if(selectedValue == "blank"){
+        drawBlankMap();
+        
+    }
+    if(selectedValue == "bach"){
+        drawMap();
+    }
+    if(selectedValue == "gdp"){
+        drawMapGdp();
+    }
+}
+
+let drawBlankMap = () => {
+    d3.select(".bachleg")
+        .attr("visibility", "hidden")
+    d3.select(".gdpleg")
+        .attr("visibility", "hidden")
+    d3.select(".bachdesc")
+        .style("visibility", "hidden")       
+    d3.select(".gdpdesc")
+        .style("visibility", "hidden")
+    canvas.selectAll("*").remove();
+    canvas.selectAll('path')
+    .data(countyData)
+    .enter()
+    .append('path')
+    .attr('d', d3.geoPath())
+    .style("fill", "lightgrey")
+}
 
 let drawMap = () => {
 
+    d3.select(".gdpleg")
+        .attr("visibility", "hidden")
+    d3.select(".gdpdesc")
+        .style("visibility", "hidden")
+    d3.select(".bachleg")
+        .attr("visibility", "visibile")
+    d3.select(".bachdesc")
+        .style("visibility", "visible")
+    canvas.selectAll("*").remove();
     canvas.selectAll('path')
     .data(countyData)
     .enter()
@@ -80,7 +120,18 @@ let drawMap = () => {
 
 let drawMapGdp = () => {
 
-    gdpcanvas.selectAll('path')
+    d3.select(".gdpleg")
+        .attr("visibility", "visible")
+        .style("bottom", "290px")
+    d3.select(".gdpdesc")
+        .style("visibility", "visible")
+        .style("bottom", "290px")
+    d3.select(".bachleg")
+        .attr("visibility", "hidden")
+    d3.select(".bachdesc")
+        .style("visibility", "hidden")
+    canvas.selectAll("*").remove();
+    canvas.selectAll('path')
     .data(countyData)
     .enter()
     .append('path')
@@ -150,6 +201,7 @@ d3.json(countyURL).then(
             console.log(log);
         }
         else{
+            
             countyData = topojson.feature(data, data.objects.counties).features
 
             console.log(countyData)
@@ -162,7 +214,7 @@ d3.json(countyURL).then(
                 else{
                     gpaData = data
                     console.log(gpaData)
-                    drawMap();
+                    drawBlankMap();
                 }
             })
 
@@ -174,8 +226,10 @@ d3.json(countyURL).then(
                 else{
                     gdpData = data
                     console.log(gdpData)
-                    drawMapGdp();
+                    //drawMapGdp();
                 }
             })
         }
     })
+
+    drawBlankMap();

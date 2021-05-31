@@ -26,7 +26,7 @@ svg{
 
 #bachcanvas{
     min-height: 600px;
-    min-width: 950px;
+    max-width: 1050px;
 }
 
 
@@ -56,8 +56,7 @@ g{
 
 #legend{
     position:relative;
-    top: 350px;
-    right: 700px;
+
     color: rgb(56, 58, 74);
     font-size: 18px;
     text-align: center;
@@ -78,8 +77,6 @@ g{
 
 #description{
     position: relative;
-    top: 350px;
-    right: 700px;
     text-decoration: none;
     color: #FDF1E7;
     text-align: center;
@@ -96,12 +93,4 @@ g{
     flex-direction: column;
     align-items: center;
     margin-left: 50px;
-}
-
-#gdpcanvas{
-    position:relative;
-    min-height: 600px;
-    min-width: 950px;
-    top: 715px;
-    right: 970px;
 }
