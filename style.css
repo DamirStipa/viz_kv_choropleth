@@ -26,7 +26,7 @@ svg{
 
 #bachcanvas{
     min-height: 600px;
-    max-width: 1050px;
+    min-width: 1000px;
 }
 
 
@@ -93,4 +93,9 @@ g{
     flex-direction: column;
     align-items: center;
     margin-left: 50px;
+}
+
+#list{
+    width: 150px;
+    height: 50px;
 }

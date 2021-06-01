@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="./style.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js" integrity="sha256-tHoAPGoNdhIR28YHl9DWLzeRfdwigkH7OCBXMrHXhoM=" crossorigin="anonymous"></script>
-    <title>Choropleth Map</title>
+    <title>United States choropleth map</title>
 </head>
 <body>
-    <h2 id='title'>United States Adult Education</h2>
+    <h2 id='title'>United States Adult Education and GDP per county</h2>
     <div id='container'>
         <svg id='bachcanvas'>
             
@@ -57,11 +57,11 @@
                 </g>
                 <g>
                     <rect x="10" y="80" width="30" height="30" fill="#084ba3"></rect>
-                    <text x="50" y="100" fill="white">2000000 to 7000000</text>
+                    <text x="50" y="100" fill="white">2 000 000 to 7 000 000</text>
                 </g>
                 <g>
                     <rect x="10" y="120" width="30" height="30" fill="#041a7d"></rect>
-                    <text x="50" y="140" fill="white">More than 7000000</text>
+                    <text x="50" y="140" fill="white">More than 7 000 000</text>
                 </g>
             </svg>
             <div id='description' class="gdpdesc">GPD per county in $USD. Source: <a href='https://www.bea.gov/data/gdp/gdp-county-metro-and-other-areas'>Bureau of Economic Analysis</a></div>

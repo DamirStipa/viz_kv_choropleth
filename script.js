@@ -95,7 +95,7 @@ let drawMap = () => {
             return item['fips'] === id
         })
 
-        tooltip.text(county['area_name'] + ', ' + county['state'] + ' : ' + county['bachelorsOrHigher'] + '%' + ", GDP: $" + county['GPA'])
+        tooltip.text(county['area_name'] + ', ' + county['state'] + ' : ' + county['bachelorsOrHigher'] + '%')
 
         tooltip.attr('data-education', county['e'])
         tooltip.transition()
@@ -122,10 +122,10 @@ let drawMapGdp = () => {
 
     d3.select(".gdpleg")
         .attr("visibility", "visible")
-        .style("bottom", "290px")
+        .style("bottom", "270px")
     d3.select(".gdpdesc")
         .style("visibility", "visible")
-        .style("bottom", "290px")
+        .style("bottom", "270px")
     d3.select(".bachleg")
         .attr("visibility", "hidden")
     d3.select(".bachdesc")
